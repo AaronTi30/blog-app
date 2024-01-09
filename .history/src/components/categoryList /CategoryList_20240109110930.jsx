@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("/api/categories", {
     cache: "no-store",
   });
 
@@ -15,8 +15,8 @@ const getData = async () => {
   return res.json();
 };
 
-const CategoryList = async () => {
-  const data = await getData();
+const CategoryList = async ({ page }) => {
+  const data = await getData(page);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>

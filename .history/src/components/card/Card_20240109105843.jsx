@@ -14,7 +14,7 @@ const Card = ({ key, item }) => {
           <span className={styles.category}>Occult</span>
         </div>
         <Link href="/">
-          <h1>{item.title}</h1>
+          <h1>lorem</h1>
         </Link>
         <p className={styles.desc}>
           Nunc sagittis ut quam in feugiat. Phasellus sollicitudin diam tellus,
