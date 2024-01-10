@@ -40,12 +40,12 @@ const Comments = ({ postSlug }) => {
       <div className={styles.comments}>
         {isLoading
           ? "loading"
-          : data?.map((item) => (
+          : data.map((item) => (
               <div className={styles.comment} key={item._id}>
                 <div className={styles.user}>
                   {item?.user?.image && (
                     <Image
-                      src={item.user.image}
+                      src={item}
                       alt=""
                       width={50}
                       height={50}
@@ -54,7 +54,7 @@ const Comments = ({ postSlug }) => {
                   )}
                   <div className={styles.userInfo}>
                     <span className={styles.username}>{item.user.name}</span>
-                    <span className={styles.date}>{item.createdAt}</span>
+                    <span className={styles.date}>{item.createAt}</span>
                   </div>
                 </div>
                 <p className={styles.desc}>{item.desc}</p>

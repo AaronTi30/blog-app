@@ -43,21 +43,24 @@ const Comments = ({ postSlug }) => {
           : data?.map((item) => (
               <div className={styles.comment} key={item._id}>
                 <div className={styles.user}>
-                  {item?.user?.image && (
-                    <Image
-                      src={item.user.image}
-                      alt=""
-                      width={50}
-                      height={50}
-                      className={styles.image}
-                    />
-                  )}
+                  <Image
+                    src="/p1.jpeg"
+                    alt=""
+                    width={50}
+                    height={50}
+                    className={styles.image}
+                  />
                   <div className={styles.userInfo}>
                     <span className={styles.username}>{item.user.name}</span>
                     <span className={styles.date}>{item.createdAt}</span>
                   </div>
                 </div>
-                <p className={styles.desc}>{item.desc}</p>
+                <p className={styles.desc}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dicta, debitis tenetur cumque maiores dignissimos aliquid
+                  tempora quo incidunt? Voluptas in quaerat soluta officiis ea
+                  minus eos voluptatum architecto doloremque omnis!
+                </p>
               </div>
             ))}
       </div>

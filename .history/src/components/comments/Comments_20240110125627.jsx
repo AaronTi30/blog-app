@@ -38,28 +38,27 @@ const Comments = ({ postSlug }) => {
         <Link href="/login">Login to write a comment</Link>
       )}
       <div className={styles.comments}>
-        {isLoading
-          ? "loading"
-          : data?.map((item) => (
-              <div className={styles.comment} key={item._id}>
-                <div className={styles.user}>
-                  {item?.user?.image && (
-                    <Image
-                      src={item.user.image}
-                      alt=""
-                      width={50}
-                      height={50}
-                      className={styles.image}
-                    />
-                  )}
-                  <div className={styles.userInfo}>
-                    <span className={styles.username}>{item.user.name}</span>
-                    <span className={styles.date}>{item.createdAt}</span>
-                  </div>
-                </div>
-                <p className={styles.desc}>{item.desc}</p>
-              </div>
-            ))}
+        <div className={styles.comment}>
+          <div className={styles.user}>
+            <Image
+              src="/p1.jpeg"
+              alt=""
+              width={50}
+              height={50}
+              className={styles.image}
+            />
+            <div className={styles.userInfo}>
+              <span className={styles.username}>John Doe</span>
+              <span className={styles.date}>01.12.2023</span>
+            </div>
+          </div>
+          <p className={styles.desc}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+            debitis tenetur cumque maiores dignissimos aliquid tempora quo
+            incidunt? Voluptas in quaerat soluta officiis ea minus eos
+            voluptatum architecto doloremque omnis!
+          </p>
+        </div>
       </div>
     </div>
   );
