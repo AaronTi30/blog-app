@@ -22,11 +22,9 @@ const WritePage = () => {
 
   const router = useRouter();
 
+  const [filed, setFile] = useState(null);
   const [open, setOpen] = useState(false);
-  const [file, setFile] = useState(null);
-  const [media, setMedia] = useState("");
   const [value, setValue] = useState("");
-  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const upload = () => {
@@ -53,7 +51,7 @@ const WritePage = () => {
         (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setMedia(downloadURL);
+            console.log("File available at", downloadURL);
           });
         }
       );
@@ -72,12 +70,7 @@ const WritePage = () => {
 
   return (
     <div className={styles.container}>
-      <input
-        type="text"
-        placeholder="Title"
-        className={styles.input}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <input type="text" placeholder="Title" className={styles.input} />
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />

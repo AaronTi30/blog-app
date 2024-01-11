@@ -5,7 +5,6 @@ import styles from "./comments.module.css";
 import Image from "next/image";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
-import { useState } from "react";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -35,7 +34,6 @@ const Comments = ({ postSlug }) => {
       method: "POST",
       body: JSON.stringify({ desc, postSlug }),
     });
-    mutate();
   };
   return (
     <div className={styles.container}>
